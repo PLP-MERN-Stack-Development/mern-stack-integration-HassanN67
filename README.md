@@ -1,78 +1,281 @@
-# MERN Stack Integration Assignment
+MERN Stack Blog Application
+A full-stack blog application built with the MERN stack (MongoDB, Express.js, React.js, Node.js) featuring a modern, responsive design and complete CRUD functionality.
 
-This assignment focuses on building a full-stack MERN (MongoDB, Express.js, React.js, Node.js) application that demonstrates seamless integration between front-end and back-end components.
+🚀 Features
+Backend Features
+RESTful API with proper HTTP status codes
 
-## Assignment Overview
+MongoDB with Mongoose ODM
 
-You will build a blog application with the following features:
-1. RESTful API with Express.js and MongoDB
-2. React front-end with component architecture
-3. Full CRUD functionality for blog posts
-4. User authentication and authorization
-5. Advanced features like image uploads and comments
+Express.js server with middleware configuration
 
-## Project Structure
+CORS enabled for cross-origin requests
 
-```
-mern-blog/
-├── client/                 # React front-end
-│   ├── public/             # Static files
-│   ├── src/                # React source code
-│   │   ├── components/     # Reusable components
-│   │   ├── pages/          # Page components
-│   │   ├── hooks/          # Custom React hooks
-│   │   ├── services/       # API services
-│   │   ├── context/        # React context providers
-│   │   └── App.jsx         # Main application component
-│   └── package.json        # Client dependencies
-├── server/                 # Express.js back-end
-│   ├── config/             # Configuration files
-│   ├── controllers/        # Route controllers
-│   ├── models/             # Mongoose models
-│   ├── routes/             # API routes
-│   ├── middleware/         # Custom middleware
-│   ├── utils/              # Utility functions
-│   ├── server.js           # Main server file
-│   └── package.json        # Server dependencies
-└── README.md               # Project documentation
-```
+Environment variables configuration
 
-## Getting Started
+Error handling middleware
 
-1. Accept the GitHub Classroom assignment invitation
-2. Clone your personal repository that was created by GitHub Classroom
-3. Follow the setup instructions in the `Week4-Assignment.md` file
-4. Complete the tasks outlined in the assignment
+Input validation and sanitization
 
-## Files Included
+Pagination and filtering
 
-- `Week4-Assignment.md`: Detailed assignment instructions
-- Starter code for both client and server:
-  - Basic project structure
-  - Configuration files
-  - Sample models and components
+Search functionality across posts
 
-## Requirements
+Frontend Features
+React 18 with functional components and hooks
 
-- Node.js (v18 or higher)
-- MongoDB (local installation or Atlas account)
-- npm or yarn
-- Git
+React Router for navigation
 
-## Submission
+Responsive design for all devices
 
-Your work will be automatically submitted when you push to your GitHub Classroom repository. Make sure to:
+Modern UI with smooth animations
 
-1. Complete both the client and server portions of the application
-2. Implement all required API endpoints
-3. Create the necessary React components and hooks
-4. Document your API and setup process in the README.md
-5. Include screenshots of your working application
+Custom hooks for API calls and state management
 
-## Resources
+Form validation and error handling
 
-- [MongoDB Documentation](https://docs.mongodb.com/)
-- [Express.js Documentation](https://expressjs.com/)
-- [React Documentation](https://react.dev/)
-- [Node.js Documentation](https://nodejs.org/en/docs/)
-- [Mongoose Documentation](https://mongoosejs.com/docs/) 
+Loading states and user feedback
+
+Search and filter functionality
+
+Pagination for better performance
+
+Blog Features
+📝 Create, read, update, and delete blog posts
+
+🔍 Search posts by title and content
+
+🏷️ Categorize posts and add tags
+
+👁️ Track post view counts
+
+📱 Fully responsive design
+
+⚡ Fast and optimized performance
+
+🛠️ Tech Stack
+Frontend
+React - UI library
+
+React Router DOM - Routing
+
+Axios - HTTP client
+
+Vite - Build tool and dev server
+
+CSS3 - Styling with modern features
+
+Backend
+Node.js - Runtime environment
+
+Express.js - Web framework
+
+MongoDB - Database
+
+Mongoose - ODM for MongoDB
+
+CORS - Cross-origin resource sharing
+
+dotenv - Environment variables
+
+📦 Installation
+Prerequisites
+Node.js (v18 or higher)
+
+MongoDB (local installation or MongoDB Atlas)
+
+npm or yarn
+
+1. Clone the Repository
+bash
+git clone <your-repository-url>
+cd mern-blog-app
+2. Backend Setup
+bash
+# Navigate to server directory
+cd server
+
+# Install dependencies
+npm install
+
+# Create environment file
+cp .env.example .env
+Edit the .env file:
+
+env
+PORT=5000
+MONGODB_URI=mongodb://localhost:27017/mern-blog
+NODE_ENV=development
+CLIENT_URL=http://localhost:3000
+3. Frontend Setup
+bash
+# Navigate to client directory
+cd ../client
+
+# Install dependencies
+npm install
+
+# Create environment file
+cp .env.example .env
+Edit the .env file:
+
+env
+VITE_API_BASE_URL=http://localhost:5000/api
+4. Database Setup
+Make sure MongoDB is running on your system:
+
+bash
+# If using local MongoDB
+mongod
+
+# Or use MongoDB Atlas connection string in your .env file
+5. Run the Application
+Start the Backend Server
+bash
+cd server
+npm run dev
+Server will run on http://localhost:5000
+
+Start the Frontend Development Server
+bash
+cd client
+npm run dev
+Client will run on http://localhost:3000
+
+🎯 API Endpoints
+Posts
+Method	Endpoint	Description
+GET	/api/posts	Get all posts with pagination
+GET	/api/posts/:id	Get single post by ID
+POST	/api/posts	Create new post
+PUT	/api/posts/:id	Update post by ID
+DELETE	/api/posts/:id	Delete post by ID
+Categories
+Method	Endpoint	Description
+GET	/api/categories	Get all categories
+POST	/api/categories	Create new category
+Health Check
+Method	Endpoint	Description
+GET	/api/health	Server health status
+GET	/api	API documentation
+Query Parameters for Posts
+page - Page number (default: 1)
+
+limit - Posts per page (default: 10)
+
+search - Search term for title/content
+
+category - Filter by category
+
+status - Filter by status (published/draft)
+
+📁 Project Structure
+text
+mern-blog-app/
+├── server/
+│   ├── models/
+│   │   ├── Post.js
+│   │   └── Category.js
+│   ├── routes/
+│   │   ├── posts.js
+│   │   └── categories.js
+│   ├── .env
+│   └── server.js
+├── client/
+│   ├── src/
+│   │   ├── components/
+│   │   │   ├── Layout/
+│   │   │   ├── Post/
+│   │   │   └── UI/
+│   │   ├── pages/
+│   │   ├── services/
+│   │   ├── hooks/
+│   │   ├── utils/
+│   │   └── App.jsx
+│   ├── public/
+│   └── package.json
+└── README.md
+🎨 Component Overview
+Layout Components
+Layout - Main layout wrapper
+
+Header - Navigation header with logo and menu
+
+Footer - Page footer
+
+Post Components
+PostCard - Individual post preview card
+
+PostList - Grid layout for multiple posts
+
+PostForm - Form for creating/editing posts
+
+UI Components
+LoadingSpinner - Loading indicator
+
+SearchBar - Search input with clear functionality
+
+Pagination - Page navigation controls
+
+Pages
+Home - Landing page with hero section and featured posts
+
+Posts - All posts with search and filtering
+
+SinglePost - Full post view with metadata
+
+CreatePost - Form to create new posts
+
+EditPost - Form to edit existing posts
+
+NotFound - 404 error page
+
+🔧 Custom Hooks
+useApi
+Generic hook for API calls with loading and error states:
+
+javascript
+const { data, loading, error, execute } = useApi(apiFunction)
+usePosts
+Specialized hook for post management:
+
+javascript
+const { 
+  posts, 
+  loading, 
+  error, 
+  filters, 
+  pagination, 
+  fetchPosts,
+  createPost,
+  updatePost,
+  deletePost 
+} = usePosts()
+🎯 Usage Examples
+Creating a Post
+javascript
+const postData = {
+  title: "My First Blog Post",
+  content: "This is the content of my blog post...",
+  author: "John Doe",
+  category: "Technology",
+  tags: ["react", "javascript", "webdev"],
+  status: "published"
+}
+
+await createPost(postData)
+Searching Posts
+javascript
+// Search for posts containing "react"
+await fetchPosts({ search: "react" })
+
+// Filter by category
+await fetchPosts({ category: "Technology" })
+
+// Combine search and pagination
+await fetchPosts({ 
+  search: "javascript", 
+  category: "Programming",
+  page: 2,
+  limit: 5
+})
